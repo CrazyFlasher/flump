@@ -29,6 +29,7 @@ public class XflKeyframe
 
     public static const SYMBOL_INSTANCE :String = "DOMSymbolInstance";
     public static const BITMAP_INSTANCE :String = "DOMBitmapInstance";
+    public static const DYNAMIC_TEXT_INSTANCE :String = "DOMDynamicText";
 
     use namespace xflns;
 
@@ -57,11 +58,16 @@ public class XflKeyframe
 
         var instanceXml :XML = null;
         for each (var frameChildXml :XML in xml.elements.elements()) {
-            if (frameChildXml.name().localName == SYMBOL_INSTANCE || frameChildXml.name().localName == BITMAP_INSTANCE) {
+            if (frameChildXml.name().localName == SYMBOL_INSTANCE || frameChildXml.name().localName == BITMAP_INSTANCE || frameChildXml.name().localName == DYNAMIC_TEXT_INSTANCE) {
                 if (instanceXml != null)  {
                     lib.addError(location, ParseError.CRIT, "There can be only one symbol instance at " +
                         "a time in a keyframe.");
                 } else {
+                    if (frameChildXml.name().localName == DYNAMIC_TEXT_INSTANCE)
+                    {
+                        trace(frameChildXml);
+                    }
+
                     instanceXml = frameChildXml;
                 }
             } else {
