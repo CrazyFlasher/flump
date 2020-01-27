@@ -42,7 +42,7 @@ public class TexturePacker
     public function quality (val :String) :TexturePacker { _quality = val; return this; }
     public function filenamePrefix (val :String) :TexturePacker { _filenamePrefix = val; return this; }
 
-    public function createAtlases (png:Boolean = true) :Vector.<Atlas> {
+    public function createAtlases () :Vector.<Atlas> {
         const unpackedTextures :Vector.<SwfTexture> = new <SwfTexture>[];
         var scale :Number = _baseScale * _scaleFactor;
         var useNamespaces :Boolean = _libs.length > 1;
@@ -80,6 +80,12 @@ public class TexturePacker
                     xPad, yPad,
                     _scaleFactor,
                     _quality);
+
+                if (singleTex.isJpg)
+                {
+                    singleAtlas.isJpg = true;
+                }
+
                 singleAtlas.place(singleTex, 0, 0);
                 return new <Atlas>[singleAtlas];
             }

@@ -5,8 +5,8 @@
   "tags": [
   ],
   "description": "Flump",
-  "version": "1.0.7",
-  "releasenote": "Fix for images marked as '$single'",
+  "version": "1.0.8",
+  "releasenote": "Fixed single jpg image atlas",
   "contributors": [
     "CrazyFlasher", 
     "tconkling"
@@ -15,3 +15,4 @@
   "dependencies": {
   }
 }
+n
