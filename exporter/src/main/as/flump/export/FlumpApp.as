@@ -52,6 +52,7 @@ public class FlumpApp
             if (hasValueArgument(event.arguments, "--export")) {
                 var projectName :String = popValueArgument(event.arguments, "--export");
                 var exportUnmodified :Boolean = popFlagArgument(event.arguments, "--unmodified");
+                AtlasUtil.disablePOT = popFlagArgument(event.arguments, "--disablePOT");
 
                 var jpgQualityIndex:int = event.arguments.indexOf("--jpgQuality");
                 if (jpgQualityIndex != -1)

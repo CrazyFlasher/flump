@@ -5,8 +5,8 @@
   "tags": [
   ],
   "description": "Flump",
-  "version": "1.0.8",
-  "releasenote": "Fixed single jpg image atlas",
+  "version": "1.0.9",
+  "releasenote": "Disable power-of-two by passing --disablePOT to command line",
   "contributors": [
     "CrazyFlasher", 
     "tconkling"

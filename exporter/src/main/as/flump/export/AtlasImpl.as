@@ -8,8 +8,9 @@ import flash.geom.Rectangle;
 
 import flump.SwfTexture;
 import flump.Util;
+    import flump.export.AtlasUtil;
 
-import flump.mold.AtlasMold;
+    import flump.mold.AtlasMold;
 import flump.mold.AtlasTextureMold;
 
 public class AtlasImpl implements Atlas
@@ -73,15 +74,20 @@ public class AtlasImpl implements Atlas
                 collapsedBounds = collapsedBounds.union(node.paddedBounds);
             });
             _bitmapData = Util.renderToBitmapData(constructed,
-                    Util.nextPowerOfTwo(collapsedBounds.x + collapsedBounds.width),
-                    Util.nextPowerOfTwo(collapsedBounds.y + collapsedBounds.height),
+                    AtlasUtil.disablePOT ? totalWidth : Util.nextPowerOfTwo(collapsedBounds.x + collapsedBounds.width),
+                    AtlasUtil.disablePOT ? totalHeight : Util.nextPowerOfTwo(collapsedBounds.y + collapsedBounds.height),
                     quailty);
+
+            trace("AtlasUtil.disablePOT " + AtlasUtil.disablePOT, totalWidth, totalHeight);
         }
+
         return _bitmapData;
     }
 
 
-    private  var hasSingleTexture:Boolean;
+    private var totalWidth:int;
+    private var totalHeight:int;
+    private var hasSingleTexture:Boolean;
     // Try to place a texture in this atlas
     public function place (tex :SwfTexture, xx :uint, yy :uint) :void {
         hasSingleTexture = tex.isSingle;
@@ -100,6 +106,12 @@ public class AtlasImpl implements Atlas
         var node :Node = new Node(xx, yy, padX, padY, tex);
         _nodes.push(node);
         setMasked(node.paddedBounds.x, node.paddedBounds.y, node.paddedBounds.width, node.paddedBounds.height);
+
+        var newWidth:int = xx + tex.w + padX;
+        var newHeight:int = yy + tex.h + padY;
+
+        if (newWidth > totalWidth) totalWidth = newWidth;
+        if (newHeight > totalHeight) totalHeight = newHeight;
     }
 
     protected static var _isMaskedPoint:Point = new Point();
