@@ -5,11 +5,12 @@
   "tags": [
   ],
   "description": "Flump",
-  "version": "1.0.9",
-  "releasenote": "Disable power-of-two by passing --disablePOT to command line",
+  "version": "1.0.10",
+  "releasenote": "Updated MacOS build",
   "contributors": [
     "CrazyFlasher", 
-    "tconkling"
+    "tconkling",
+	"d-velopment"
   ],
   "classPath": "",
   "dependencies": {

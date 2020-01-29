@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-dependencies" default="init-dependencies">
+<target name="init-dependencies">
+    <echo level="info" message="Loading dependency paths from file: /Users/Shared/flump/exporter/dist/com.threerings.ant.javanailgun-1.0-taskdef.dependencies"/>
+    <property name="com.threerings.ant:javanailgun:jar" value="/Users/hello/.m2/repository/com/threerings/ant/javanailgun/1.0/javanailgun-1.0.jar"/>
+    <fileset id="com.threerings.ant:javanailgun:jar" dir="/Users/hello/.m2/repository/com/threerings/ant/javanailgun/1.0">
+      <include name="javanailgun-1.0.jar"/>
+    </fileset>
+    <path id="com.threerings.ant.javanailgun-1.0-taskdef.path">
+      <pathelement path="/Users/hello/.m2/repository/com/threerings/ant/javanailgun/1.0/javanailgun-1.0.jar"/>
+    </path>
+    <fileset id="com.threerings.ant.javanailgun-1.0-taskdef.fileset" dir="/Users/hello/.m2/repository">
+      <include name="com/threerings/ant/javanailgun/1.0/javanailgun-1.0.jar"/>
+    </fileset>
+  </target>
+</project>

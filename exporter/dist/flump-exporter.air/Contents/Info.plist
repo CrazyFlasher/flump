@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>CFBundleAllowMixedLocalizations</key>
+        <true/>
+        <key>CFBundlePackageType</key>
+        <string>APPL</string>
+        <key>CFBundleInfoDictionaryVersion</key>
+        <string>6.0</string>
+        <key>LSMinimumSystemVersion</key>
+        <string>10.6</string>
+        <key>LSRequiresCarbon</key>
+        <true/>
+        <key>CFBundleIdentifier</key>
+        <string>flump</string>
+        <key>CFBundleGetInfoString</key>
+        <string>1.5.6,</string>
+        <key>CFBundleShortVersionString</key>
+        <string>1.5.6</string>
+        <key>NSHumanReadableCopyright</key>
+        <string/>
+        <key>CFBundleExecutable</key>
+        <string>Flump</string>
+        <key>NSAppTransportSecurity</key>
+        <dict>
+            <key>NSAllowsArbitraryLoads</key>
+            <true/>
+        </dict>
+        <key>NSHighResolutionCapable</key>
+        <false/>
+        <key>CFBundleIconFile</key>
+        <string>Icon.icns</string>
+        <key>CFBundleDocumentTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleTypeExtensions</key>
+                <array>
+                    <string>flump</string>
+                </array>
+                <key>CFBundleTypeMIMETypes</key>
+                <array>
+                    <string>application/json</string>
+                </array>
+                <key>CFBundleTypeName</key>
+                <string>Flump project</string>
+                <key>CFBundleTypeRole</key>
+                <string>Editor</string>
+                <key>CFBundleTypeIconFile</key>
+                <string>DocumentIcon1.icns</string>
+            </dict>
+        </array>
+    </dict>
+</plist>

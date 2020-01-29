@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-dependencies" default="init-dependencies">
+<target name="init-dependencies">
+    <echo level="info" message="Loading dependency paths from file: /Users/Shared/flump/exporter/dist/pom.xml.dependencies"/>
+    <property name="com.threerings.flump:flump-runtime:swc" value="/Users/hello/.m2/repository/com/threerings/flump/flump-runtime/1.5.6-SNAPSHOT/flump-runtime-1.5.6-SNAPSHOT.swc"/>
+    <fileset id="com.threerings.flump:flump-runtime:swc" dir="/Users/hello/.m2/repository/com/threerings/flump/flump-runtime/1.5.6-SNAPSHOT">
+      <include name="flump-runtime-1.5.6-SNAPSHOT.swc"/>
+    </fileset>
+    <property name="com.timconkling:react-as3:swc" value="/Users/hello/.m2/repository/com/timconkling/react-as3/1.2.2/react-as3-1.2.2.swc"/>
+    <fileset id="com.timconkling:react-as3:swc" dir="/Users/hello/.m2/repository/com/timconkling/react-as3/1.2.2">
+      <include name="react-as3-1.2.2.swc"/>
+    </fileset>
+    <property name="com.gamua:starling-framework:swc" value="/Users/hello/.m2/repository/com/gamua/starling-framework/2.3/starling-framework-2.3.swc"/>
+    <fileset id="com.gamua:starling-framework:swc" dir="/Users/hello/.m2/repository/com/gamua/starling-framework/2.3">
+      <include name="starling-framework-2.3.swc"/>
+    </fileset>
+    <property name="deng:fzip:swc" value="/Users/hello/.m2/repository/deng/fzip/a5430bd/fzip-a5430bd.swc"/>
+    <fileset id="deng:fzip:swc" dir="/Users/hello/.m2/repository/deng/fzip/a5430bd">
+      <include name="fzip-a5430bd.swc"/>
+    </fileset>
+    <property name="com.adobe:as3corelib:swc" value="/Users/hello/.m2/repository/com/adobe/as3corelib/0.93/as3corelib-0.93.swc"/>
+    <fileset id="com.adobe:as3corelib:swc" dir="/Users/hello/.m2/repository/com/adobe/as3corelib/0.93">
+      <include name="as3corelib-0.93.swc"/>
+    </fileset>
+    <property name="com.timconkling:aspire:swc" value="/Users/hello/.m2/repository/com/timconkling/aspire/1.2.2/aspire-1.2.2.swc"/>
+    <fileset id="com.timconkling:aspire:swc" dir="/Users/hello/.m2/repository/com/timconkling/aspire/1.2.2">
+      <include name="aspire-1.2.2.swc"/>
+    </fileset>
+    <path id="pom.xml.path">
+      <pathelement path="/Users/hello/.m2/repository/com/threerings/flump/flump-runtime/1.5.6-SNAPSHOT/flump-runtime-1.5.6-SNAPSHOT.swc"/>
+      <pathelement path="/Users/hello/.m2/repository/com/timconkling/react-as3/1.2.2/react-as3-1.2.2.swc"/>
+      <pathelement path="/Users/hello/.m2/repository/com/gamua/starling-framework/2.3/starling-framework-2.3.swc"/>
+      <pathelement path="/Users/hello/.m2/repository/deng/fzip/a5430bd/fzip-a5430bd.swc"/>
+      <pathelement path="/Users/hello/.m2/repository/com/adobe/as3corelib/0.93/as3corelib-0.93.swc"/>
+      <pathelement path="/Users/hello/.m2/repository/com/timconkling/aspire/1.2.2/aspire-1.2.2.swc"/>
+    </path>
+    <fileset id="pom.xml.fileset" dir="/Users/hello/.m2/repository">
+      <include name="com/adobe/as3corelib/0.93/as3corelib-0.93.swc"/>
+      <include name="com/gamua/starling-framework/2.3/starling-framework-2.3.swc"/>
+      <include name="com/threerings/flump/flump-runtime/1.5.6-SNAPSHOT/flump-runtime-1.5.6-SNAPSHOT.swc"/>
+      <include name="com/timconkling/aspire/1.2.2/aspire-1.2.2.swc"/>
+      <include name="com/timconkling/react-as3/1.2.2/react-as3-1.2.2.swc"/>
+      <include name="deng/fzip/a5430bd/fzip-a5430bd.swc"/>
+    </fileset>
+  </target>
+</project>
