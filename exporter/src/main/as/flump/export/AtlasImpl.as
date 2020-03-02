@@ -67,11 +67,14 @@ public class AtlasImpl implements Atlas
             var constructed :Sprite = new Sprite();
             var collapsedBounds :Rectangle = new Rectangle();
             _nodes.forEach(function (node :Node, ..._) :void {
-                const bm :Bitmap = new Bitmap(node.texture.toBitmapData(!hasSingleTexture ? _xBorderSize : 0, !hasSingleTexture ? _yBorderSize : 0), "auto", true);
-                constructed.addChild(bm);
-                bm.x = node.paddedBounds.x;
-                bm.y = node.paddedBounds.y;
-                collapsedBounds = collapsedBounds.union(node.paddedBounds);
+                if (node.texture.symbol.indexOf("@tf:") == -1)
+                {
+                    const bm :Bitmap = new Bitmap(node.texture.toBitmapData(!hasSingleTexture ? _xBorderSize : 0, !hasSingleTexture ? _yBorderSize : 0), "auto", true);
+                    constructed.addChild(bm);
+                    bm.x = node.paddedBounds.x;
+                    bm.y = node.paddedBounds.y;
+                    collapsedBounds = collapsedBounds.union(node.paddedBounds);
+                }
             });
             _bitmapData = Util.renderToBitmapData(constructed,
                     AtlasUtil.disablePOT ? totalWidth : Util.nextPowerOfTwo(collapsedBounds.x + collapsedBounds.width),
@@ -107,11 +110,14 @@ public class AtlasImpl implements Atlas
         _nodes.push(node);
         setMasked(node.paddedBounds.x, node.paddedBounds.y, node.paddedBounds.width, node.paddedBounds.height);
 
-        var newWidth:int = xx + tex.w + padX;
-        var newHeight:int = yy + tex.h + padY;
+        if (tex.symbol.indexOf("@tf:") == -1)
+        {
+            var newWidth:int = xx + tex.w + padX;
+            var newHeight:int = yy + tex.h + padY;
 
-        if (newWidth > totalWidth) totalWidth = newWidth;
-        if (newHeight > totalHeight) totalHeight = newHeight;
+            if (newWidth > totalWidth) totalWidth = newWidth;
+            if (newHeight > totalHeight) totalHeight = newHeight;
+        }
     }
 
     protected static var _isMaskedPoint:Point = new Point();
